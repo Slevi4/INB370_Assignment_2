@@ -16,10 +16,13 @@ import asgn2Exceptions.VehicleException;
  * The MotorCycle class is a 'specialisation' of the Vehicle class to cater for motorcycles
  * This version uses only those facilities specified in the Vehicle class 
  * 
- * @author hogan
+ * @author Shannon Levick (n8591431)
  *
  */
 public class MotorCycle extends Vehicle {
+	
+	public String vehID;
+	public int arrivalTime;
 
 	/**
 	 * MotorCycle constructor 
@@ -29,5 +32,13 @@ public class MotorCycle extends Vehicle {
 	 * @throws VehicleException if arrivalTime is <= 0  
 	 */
 	public MotorCycle(String vehID, int arrivalTime) throws VehicleException {
+		super(vehID, arrivalTime);
+		if (arrivalTime <= 0){
+			throw new VehicleException("Error: bike arrivalTime must be greater than 0.");
+		}
+		
+		this.vehID = vehID;
+		this.arrivalTime = arrivalTime;
+		
 	}
 }

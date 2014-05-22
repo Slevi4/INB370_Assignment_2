@@ -17,12 +17,14 @@ import asgn2Exceptions.VehicleException;
  * This version of the class does not cater for model types, but records whether or not the 
  * vehicle can use a small parking space. 
  * 
- * @author hogan
+ * @author Shannon Levick (n8591431)
  *
  */
 public class Car extends Vehicle {
 	
 	private boolean small; 
+	public String vehID;
+	public int arrivalTime;
 
 	/**
 	 * The Car Constructor - small set at creation, not mutable. 
@@ -33,6 +35,13 @@ public class Car extends Vehicle {
 	 * @throws VehicleException if arrivalTime is <= 0  
 	 */
 	public Car(String vehID, int arrivalTime, boolean small) throws VehicleException {
+		super(vehID, arrivalTime);
+		if (arrivalTime <= 0){
+			throw new VehicleException("Error: Car arrivalTime must be greater than 0.");
+		}
+		this.vehID = vehID;
+		this.arrivalTime = arrivalTime;
+		this.small = small;
 	}
 
 	/**
@@ -41,6 +50,11 @@ public class Car extends Vehicle {
 	 * @return true if small parking space, false otherwise
 	 */
 	public boolean isSmall() {
+		if (small){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/* (non-Javadoc)
@@ -48,5 +62,6 @@ public class Car extends Vehicle {
 	 */
 	@Override
 	public String toString() {
+		return "Car toString()";
 	}
 }
