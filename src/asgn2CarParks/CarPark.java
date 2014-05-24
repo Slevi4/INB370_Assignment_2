@@ -39,6 +39,13 @@ import asgn2Vehicles.Vehicle;
  *
  */
 public class CarPark {
+	private int numberCarSpaces;
+	private int numberSmallCarSpaces;
+	private int numberMotoSpaces;
+	private int theMaxQueueSize;
+	ArrayList<Vehicle> theCarPark;
+	ArrayList archivedVehicles = new ArrayList();
+	ArrayList<Vehicle> theQueue;
 
 	
 	/**
@@ -59,6 +66,11 @@ public class CarPark {
 	 * @param maxQueueSize maximum number of vehicles allowed to queue
 	 */
 	public CarPark(int maxCarSpaces,int maxSmallCarSpaces, int maxMotorCycleSpaces, int maxQueueSize) {
+		numberCarSpaces = maxCarSpaces;
+		numberSmallCarSpaces = maxSmallCarSpaces;
+		numberMotoSpaces = maxMotorCycleSpaces;
+		theMaxQueueSize = maxQueueSize;
+		theCarPark = new ArrayList<Vehicle>();
 	}
 
 	/**
@@ -70,6 +82,7 @@ public class CarPark {
 	 * @throws SimulationException if one or more departing vehicles are not in the car park when operation applied
 	 */
 	public void archiveDepartingVehicles(int time,boolean force) throws VehicleException, SimulationException {
+		
 	}
 		
 	/**
@@ -147,6 +160,7 @@ public class CarPark {
 	 * @return number of cars in car park, including small cars
 	 */
 	public int getNumCars() {
+		
 	}
 	
 	/**
