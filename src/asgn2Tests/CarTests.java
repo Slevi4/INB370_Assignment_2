@@ -16,8 +16,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import asgn2Exceptions.VehicleException;
+import asgn2Vehicles.Car;
+
 /**
- * @author hogan
+ * @author Yujin Oh (n8560170)
  *
  */
 public class CarTests {
@@ -38,10 +41,13 @@ public class CarTests {
 
 	/**
 	 * Test method for {@link asgn2Vehicles.Car#toString()}.
+	 * @param small 
+	 * @throws VehicleException 
 	 */
 	@Test
-	public void testToString() {
-		fail("Not yet implemented"); // TODO
+	public void testToString(String small) throws VehicleException {
+		new small();
+		
 	}
 
 	/**
@@ -49,7 +55,7 @@ public class CarTests {
 	 */
 	@Test
 	public void testCar() {
-		fail("Not yet implemented"); // TODO
+		new Car()
 	}
 
 	/**
@@ -57,7 +63,7 @@ public class CarTests {
 	 */
 	@Test
 	public void testIsSmall() {
-		fail("Not yet implemented"); // TODO
+		
 	}
 
 }
