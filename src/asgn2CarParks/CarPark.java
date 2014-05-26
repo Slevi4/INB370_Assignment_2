@@ -39,17 +39,6 @@ import asgn2Vehicles.Vehicle;
  *
  */
 public class CarPark {
-	private ArrayList<Vehicle> theCarPark = new ArrayList<Vehicle>();
-	private Queue<Vehicle> theQueue = new LinkedList<Vehicle>();
-	private ArrayList<Vehicle> archivedVehicles = new ArrayList<Vehicle>();
-	private int maxCarSpaces;
-	private int maxSmallCarSpaces;
-	private int maxMotorCycleSpaces;
-	private int maxQueueSize;
-	private int availableMotoSpaces;
-	private int availableSmallCarSpaces;
-	private int availableLargeCarSpaces;
-	
 	
 	/**
 	 * CarPark constructor sets the basic size parameters. 
@@ -69,13 +58,6 @@ public class CarPark {
 	 * @param maxQueueSize maximum number of vehicles allowed to queue
 	 */
 	public CarPark(int maxCarSpaces,int maxSmallCarSpaces, int maxMotorCycleSpaces, int maxQueueSize) {
-		this.maxCarSpaces = maxCarSpaces;
-		this.maxSmallCarSpaces = maxSmallCarSpaces;
-		this.maxMotorCycleSpaces = maxMotorCycleSpaces;
-		this.maxQueueSize = maxQueueSize;
-		availableMotoSpaces = maxMotorCycleSpaces;
-		availableSmallCarSpaces = maxSmallCarSpaces;
-		availableLargeCarSpaces = (maxCarSpaces = maxSmallCarSpaces);
 	}
 
 	/**
@@ -111,11 +93,6 @@ public class CarPark {
 	 * @return true if car park empty, false otherwise
 	 */
 	public boolean carParkEmpty() {
-		if (theCarPark.size() == 0){
-			return true;
-		} else {
-			return false;
-		}
 	}
 	
 	/**
@@ -123,11 +100,6 @@ public class CarPark {
 	 * @return true if car park full, false otherwise
 	 */
 	public boolean carParkFull() {
-		if ((availableMotoSpaces == 0) && (availableSmallCarSpaces == 0) && (availableLargeCarSpaces == 0)){
-			return true;
-		} else {
-			return false;
-		}
 	}
 	
 	/**
@@ -248,11 +220,6 @@ public class CarPark {
 	 * @return number of vehicles in the queue
 	 */
 	public int numVehiclesInQueue() {
-		int total = 0;
-		for (int i = 9; i < theQueue.size(); i++){
-			total += 1;
-		}
-		return total;
 	}
 	
 	/**
@@ -284,11 +251,6 @@ public class CarPark {
 	 * @return true if queue empty, false otherwise
 	 */
 	public boolean queueEmpty() {
-		if (theQueue.size() == 0){
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 	/**
@@ -296,11 +258,6 @@ public class CarPark {
 	 * @return true if queue full, false otherwise
 	 */
 	public boolean queueFull() {
-		if (theQueue.size() == maxQueueSize){
-			return true;
-		} else {
-			return false;
-		}
 	}
 	
 	/**
@@ -318,7 +275,6 @@ public class CarPark {
 	 */
 	@Override
 	public String toString() {
-		return "blablabal";
 	}
 
 	/**
