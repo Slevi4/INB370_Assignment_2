@@ -183,7 +183,14 @@ public class CarPark {
 	 * @return number of cars in car park, including small cars
 	 */
 	public int getNumCars() {
-		
+		int totalCars = 0;
+		for (int i = 0; i < theCarPark.size(); i++){
+			Vehicle theVehicle = theCarPark.get(i);
+			if (theVehicle instanceof Car){
+				totalCars += 1;
+			}
+		}
+		return totalCars;
 	}
 	
 	/**
@@ -200,6 +207,17 @@ public class CarPark {
 	 * 		   not occupying a small car space. 
 	 */
 	public int getNumSmallCars() {
+		int totalSmallCars = 0;
+		for (int i = 0; i < theCarPark.size(); i++){
+			Vehicle theVehicle = theCarPark.get(i);
+			if (theVehicle instanceof Car){
+				Car theCar = (Car)theVehicle;
+				if (theCar.isSmall()){
+					totalSmallCars += 1;
+				}
+			}
+		}
+		return totalSmallCars;
 	}
 	
 	/**

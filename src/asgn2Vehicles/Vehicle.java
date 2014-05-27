@@ -52,7 +52,7 @@ public abstract class Vehicle {
 	private String theVehID;
 	public state theState;
 	
-	private enum state {
+	public enum state {
 		NEW, QUEUED, PARKED, ARCHIVED
 	}
 	
