@@ -50,6 +50,11 @@ public abstract class Vehicle {
 	private int theExitTime;
 	private int theDepartureTime;
 	private String theVehID;
+	public state theState;
+	
+	private enum state {
+		NEW, QUEUED, PARKED, ARCHIVED
+	}
 	
 	/**
 	 * Vehicle Constructor 
@@ -81,6 +86,7 @@ public abstract class Vehicle {
 			throw new VehicleException("enterParkedState");
 		} else {
 			isParked = true;
+			theState = state.PARKED;
 		}
 	}
 	
@@ -94,6 +100,7 @@ public abstract class Vehicle {
 			throw new VehicleException("enterQueuedState");
 		} else {
 			isQueued = true;
+			theState = state.QUEUED;
 		}
 	}
 	

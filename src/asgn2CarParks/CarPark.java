@@ -39,6 +39,9 @@ import asgn2Vehicles.Vehicle;
  *
  */
 public class CarPark {
+	public ArrayList<Vehicle> theCarPark = new ArrayList<Vehicle>();
+	public ArrayList<Vehicle> theQueue = new ArrayList<Vehicle>();
+	public ArrayList<String> theArchive = new ArrayList<String>();
 	
 	/**
 	 * CarPark constructor sets the basic size parameters. 
@@ -275,6 +278,7 @@ public class CarPark {
 	 */
 	@Override
 	public String toString() {
+		return "Carpark toString";
 	}
 
 	/**
