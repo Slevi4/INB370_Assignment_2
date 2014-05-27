@@ -81,6 +81,11 @@ public class CarPark {
 	 * @throws SimulationException if vehicle is currently queued or parked
 	 */
 	public void archiveNewVehicle(Vehicle v) throws SimulationException {
+		if (v.isParked() || v.isQueued()){
+			throw new SimulationException("Error: Vehicle to be archived is currently parked or queued.");
+		} else {
+			theArchive.add(v.getVehID());
+		}
 	}
 	
 	/**
@@ -89,6 +94,14 @@ public class CarPark {
 	 * @throws VehicleException if one or more vehicles not in the correct state or if timing constraints are violated
 	 */
 	public void archiveQueueFailures(int time) throws VehicleException {
+		for (int i = 0; i < theQueue.size(); i++){
+			Vehicle theVehicle = theQueue.get(i);
+			if ((time - theVehicle.getArrivalTime()) > Constants.MAXIMUM_QUEUE_TIME){
+				theArchive.add(theVehicle.getVehID());
+			} else {
+				throw new VehicleException("Error: Vehicle isn't queued or has violated timing constraints.");
+			}
+		}
 	}
 	
 	/**
