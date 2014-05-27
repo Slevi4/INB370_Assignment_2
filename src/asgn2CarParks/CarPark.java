@@ -42,6 +42,9 @@ public class CarPark {
 	public ArrayList<Vehicle> theCarPark = new ArrayList<Vehicle>();
 	public ArrayList<Vehicle> theQueue = new ArrayList<Vehicle>();
 	public ArrayList<String> theArchive = new ArrayList<String>();
+	private int availableLargeCarSpaces;
+	private int availableSmallCarSpaces;
+	private int availableMotoSpaces;
 	
 	/**
 	 * CarPark constructor sets the basic size parameters. 
@@ -109,6 +112,11 @@ public class CarPark {
 	 * @return true if car park empty, false otherwise
 	 */
 	public boolean carParkEmpty() {
+		if (theCarPark.size() == 0){
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	/**
@@ -116,6 +124,11 @@ public class CarPark {
 	 * @return true if car park full, false otherwise
 	 */
 	public boolean carParkFull() {
+		if (availableSmallCarSpaces == 0 && availableLargeCarSpaces == 0 && availableMotoSpaces == 0){
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	/**
@@ -127,6 +140,14 @@ public class CarPark {
 	 * @throws VehicleException if vehicle not in the correct state 
 	 */
 	public void enterQueue(Vehicle v) throws SimulationException, VehicleException {
+		if (theQueue.size() >= Constants.DEFAULT_MAX_QUEUE_SIZE){
+			throw new SimulationException("Error: The queue is full.");
+		}
+		theQueue.add(v);
+		v.enterQueuedState();
+		if (v.theState != Vehicle.state.QUEUED){
+			throw new VehicleException("Error: The Vehicle is not in the correct state.");
+		}
 	}
 	
 	
