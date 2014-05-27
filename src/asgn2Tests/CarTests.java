@@ -20,16 +20,22 @@ import asgn2Exceptions.VehicleException;
 import asgn2Vehicles.Car;
 
 /**
- * @author Yujin Oh (n8560170)
+ * @author Shannon Levick (n8591431)
  *
  */
 public class CarTests {
+	
+	private String VehID;
+	private int arrivalTime;
+	private boolean small;
+	Car theCar;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		this.theCar = new Car(VehID, arrivalTime, small);
 	}
 
 	/**
@@ -37,6 +43,7 @@ public class CarTests {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		theCar = null;
 	}
 
 	/**
@@ -46,8 +53,6 @@ public class CarTests {
 	 */
 	@Test
 	public void testToString(String small) throws VehicleException {
-		new small();
-		
 	}
 
 	/**
@@ -55,7 +60,6 @@ public class CarTests {
 	 */
 	@Test
 	public void testCar() {
-		new Car()
 	}
 
 	/**
@@ -63,7 +67,7 @@ public class CarTests {
 	 */
 	@Test
 	public void testIsSmall() {
-		
+		assertTrue(theCar.isSmall());
 	}
 
 }
