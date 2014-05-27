@@ -7,8 +7,6 @@
  * asgn2Tests 
  * 22/04/2014
  * 
- * YUJIN OH (n8560170)
- * 
  */
 package asgn2Tests;
 
@@ -18,11 +16,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import asgn2Exceptions.VehicleException;
-import asgn2Vehicles.Car;
-
 /**
- * @author YUJIN OH (n8560170)
+ * @author hogan
  *
  */
 public class CarTests {
@@ -30,12 +25,8 @@ public class CarTests {
 	/**
 	 * @throws java.lang.Exception
 	 */
-	
-	Car small;
-	
 	@Before
 	public void setUp() throws Exception {
-		small = new Car(null, 1, true);
 	}
 
 	/**
@@ -47,20 +38,18 @@ public class CarTests {
 
 	/**
 	 * Test method for {@link asgn2Vehicles.Car#toString()}.
-	 * @param Small 
 	 */
 	@Test
-	public void testToString(Object Small) throws VehicleException {
-		equals("Small");
+	public void testToString() {
+		fail("Not yet implemented"); // TODO
 	}
 
 	/**
 	 * Test method for {@link asgn2Vehicles.Car#Car(java.lang.String, int, boolean)}.
-	 * @throws VehicleException 
 	 */
 	@Test
-	public void testCar() throws VehicleException {
-		assertEquals("small", new Car("none", 1, true).toString());
+	public void testCar() {
+		fail("Not yet implemented"); // TODO
 	}
 
 	/**
