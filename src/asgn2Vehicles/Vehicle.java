@@ -50,6 +50,7 @@ public abstract class Vehicle {
 	private int theExitTime;
 	private int theDepartureTime;
 	private String theVehID;
+	private String state = "";
 	
 	/**
 	 * Vehicle Constructor 
@@ -81,6 +82,7 @@ public abstract class Vehicle {
 			throw new VehicleException("enterParkedState");
 		} else {
 			isParked = true;
+			state = "P";
 		}
 	}
 	
@@ -94,6 +96,7 @@ public abstract class Vehicle {
 			throw new VehicleException("enterQueuedState");
 		} else {
 			isQueued = true;
+			state = "Q";
 		}
 	}
 	

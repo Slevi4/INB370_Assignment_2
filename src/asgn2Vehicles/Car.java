@@ -47,6 +47,7 @@ public class Car extends Vehicle {
 	/**
 	 * Boolean status indicating whether car is small enough for small 
 	 * car parking spaces  
+	 * @param small 
 	 * @return true if small parking space, false otherwise
 	 */
 	public boolean isSmall() {
@@ -59,9 +60,16 @@ public class Car extends Vehicle {
 
 	/* (non-Javadoc)
 	 * @see asgn2Vehicles.Vehicle#toString()
+	 * @ YUJIN OH (n8560170)
 	 */
 	@Override
 	public String toString() {
-		return "Car toString()";
+		if (small = true){
+			return "small";
+		}
+		if (small = true){
+			return "vechicle";
+		}
+		return "MotorCycle";
 	}
 }
