@@ -16,17 +16,28 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import asgn2CarParks.CarPark;
+import asgn2Vehicles.Car;
+
 /**
- * @author hogan
+ * @author Shannon Levick (n8591431)
  *
  */
+
 public class CarParkTests {
 
+	private int carParkSpaces = 100;
+	private int smallCarParkSpaces = 20;
+	private int motoSpaces = 10;
+	private int queueSize = 10;
+	private CarPark testCarPark;
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		testCarPark = new CarPark(carParkSpaces, smallCarParkSpaces, motoSpaces, queueSize);
 	}
 
 	/**
@@ -34,6 +45,7 @@ public class CarParkTests {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		testCarPark = null;
 	}
 
 	/**
@@ -105,7 +117,10 @@ public class CarParkTests {
 	 */
 	@Test
 	public void testGetNumCars() {
-		fail("Not yet implemented"); // TODO
+		for (int i = 0; i < 10; i++){
+			Car testCar = new Car();
+			
+		}
 	}
 
 	/**

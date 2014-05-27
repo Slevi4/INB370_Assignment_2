@@ -1,0 +1,29 @@
+INB370 Assignment 2
+Shannon Levick (n8591431) - slevi4@gmail.com
+Yujin Oh (n8560170)
+
+Declarations:
+I, Shannon Levick (n8591431), completed all the work in the asgn2Vehicles, asgn2Tests and asgn2CarParks packages.
+This includes all the overall structure, methods, commenting, variables and all other work in:
+CarPark.java
+CarParkTests.java
+CarTests.java
+MotorCycleTests.java
+Car.java
+MotorCycle.java
+Vehicle.java
+
+
+Completion Status:
+The program is incomplete and, as such, the GUI has not yet been implemented.
+
+Additional Notes:
+I, Shannon Levick, emailed Jim with concerns about working with Yujin for multiple reasons.
+After attempting to work with him, I emailed Jim again, with no response.
+I will submit these emails upon request.
+The commencement of work on this assignment was put off as we wanted to meet in person to start off,
+however Yujin could not come up with reasonable meetup times. Eventually I was forced to commence
+work on it as less than a week was left. I feel the end result would be more complete had I had 
+a more suitable partner in both available collaboration time and programming skill.
+
+Yujin eventually asked me what he could contribute at 8:00pm on Tuesday 27th May, 2014.

@@ -49,6 +49,11 @@ public class CarPark {
 	private int availableMotoSpaces = Constants.DEFAULT_MAX_MOTORCYCLE_SPACES;
 	private int availableQueueSpaces = Constants.DEFAULT_MAX_QUEUE_SIZE;
 	
+	private int maxCarSpaces;
+	private int maxSmallCarSpaces;
+	private int maxMotorCycleSpaces;
+	private int maxQueueSize;
+	
 	/**
 	 * CarPark constructor sets the basic size parameters. 
 	 * Uses default parameters
@@ -67,6 +72,10 @@ public class CarPark {
 	 * @param maxQueueSize maximum number of vehicles allowed to queue
 	 */
 	public CarPark(int maxCarSpaces,int maxSmallCarSpaces, int maxMotorCycleSpaces, int maxQueueSize) {
+		this.maxCarSpaces = maxCarSpaces;
+		this.maxSmallCarSpaces = maxSmallCarSpaces;
+		this.maxMotorCycleSpaces = maxMotorCycleSpaces;
+		this.maxQueueSize = maxQueueSize;
 	}
 
 	/**
