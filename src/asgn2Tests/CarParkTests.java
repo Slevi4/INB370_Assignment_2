@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import asgn2CarParks.CarPark;
+<<<<<<< HEAD
 import asgn2Exceptions.SimulationException;
 import asgn2Exceptions.VehicleException;
 import asgn2Simulators.Constants;
@@ -23,10 +24,41 @@ import asgn2Vehicles.Car;
 /**
  * @author hogan
  * Yujin Oh (n8560170)
+=======
+import asgn2Vehicles.Car;
+
+/**
+ * @author Shannon Levick (n8591431)
+>>>>>>> FETCH_HEAD
  *
  */
+
 public class CarParkTests {
 
+<<<<<<< HEAD
+=======
+	private int carParkSpaces = 100;
+	private int smallCarParkSpaces = 20;
+	private int motoSpaces = 10;
+	private int queueSize = 10;
+	private CarPark testCarPark;
+	
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+		testCarPark = new CarPark(carParkSpaces, smallCarParkSpaces, motoSpaces, queueSize);
+	}
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+		testCarPark = null;
+	}
+>>>>>>> FETCH_HEAD
 
 	/**
 	 * Test method for {@link asgn2CarParks.CarPark#archiveDepartingVehicles(int, boolean)}.
@@ -133,7 +165,30 @@ public class CarParkTests {
 	 */
 	@Test
 	public void testFinalState() {
+<<<<<<< HEAD
 		assertTrue(true);
+=======
+		fail("Not yet implemented"); // TODO
+	}
+
+	/**
+	 * Test method for {@link asgn2CarParks.CarPark#getNumCars()}.
+	 */
+	@Test
+	public void testGetNumCars() {
+		for (int i = 0; i < 10; i++){
+			Car testCar = new Car();
+			
+		}
+	}
+
+	/**
+	 * Test method for {@link asgn2CarParks.CarPark#getNumMotorCycles()}.
+	 */
+	@Test
+	public void testGetNumMotorCycles() {
+		fail("Not yet implemented"); // TODO
+>>>>>>> FETCH_HEAD
 	}
 
 

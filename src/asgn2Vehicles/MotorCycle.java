@@ -21,6 +21,7 @@ import asgn2Exceptions.VehicleException;
  */
 public class MotorCycle extends Vehicle {
 	
+	//Declared variables for use in this class.
 	public String vehID;
 	public int arrivalTime;
 
@@ -31,6 +32,8 @@ public class MotorCycle extends Vehicle {
 	 *        either queued or given entry to the carpark 
 	 * @throws VehicleException if arrivalTime is <= 0  
 	 */
+	
+	//Constructor for this class.
 	public MotorCycle(String vehID, int arrivalTime) throws VehicleException {
 		super(vehID, arrivalTime);
 		if (arrivalTime <= 0){
