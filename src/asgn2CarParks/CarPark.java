@@ -40,11 +40,13 @@ import asgn2Vehicles.Vehicle;
  */
 public class CarPark {
 	public ArrayList<Vehicle> theCarPark = new ArrayList<Vehicle>();
+	public ArrayList<Vehicle> theMotoSpaces = new ArrayList<Vehicle>();
 	public ArrayList<Vehicle> theQueue = new ArrayList<Vehicle>();
 	public ArrayList<String> theArchive = new ArrayList<String>();
-	private int availableLargeCarSpaces;
-	private int availableSmallCarSpaces;
-	private int availableMotoSpaces;
+	private int availableLargeCarSpaces = Constants.DEFAULT_MAX_CAR_SPACES;
+	private int availableSmallCarSpaces = Constants.DEFAULT_MAX_SMALL_CAR_SPACES;
+	private int availableMotoSpaces = Constants.DEFAULT_MAX_MOTORCYCLE_SPACES;
+	private int availableQueueSpaces = Constants.DEFAULT_MAX_QUEUE_SIZE;
 	
 	/**
 	 * CarPark constructor sets the basic size parameters. 
@@ -199,6 +201,20 @@ public class CarPark {
 	 * 			a small car space
 	 */
 	public int getNumMotorCycles() {
+		int totalMoto = 0;
+		for (int i = 0; i < theMotoSpaces.size(); i++){
+			Vehicle theVehicle = theMotoSpaces.get(i);
+			if (theVehicle instanceof MotorCycle){
+				totalMoto += 1;
+			}
+		}
+		for (int j = 0; j < theCarPark.size(); j++){
+			Vehicle theVehicle = theCarPark.get(j);
+			if (theVehicle instanceof MotorCycle){
+				totalMoto += 1;
+			}
+		}
+		return totalMoto;
 	}
 	
 	/**
@@ -275,6 +291,11 @@ public class CarPark {
 	 * @return number of vehicles in the queue
 	 */
 	public int numVehiclesInQueue() {
+		int totalQueuedVehicles = 0;
+		for (int i = 0; i < theQueue.size(); i++){
+			totalQueuedVehicles += 1;
+		}
+		return totalQueuedVehicles;
 	}
 	
 	/**
@@ -288,6 +309,31 @@ public class CarPark {
 	 * @throws VehicleException if vehicle not in the correct state or timing constraints are violated
 	 */
 	public void parkVehicle(Vehicle v, int time, int intendedDuration) throws SimulationException, VehicleException {
+		if (v instanceof Car){
+			Car theCar = (Car)v;
+			if (!theCar.isSmall() && availableLargeCarSpaces > 0){
+				v.enterParkedState(time, intendedDuration);
+				theCarPark.add(v);
+			} else if (!theCar.isSmall() && availableLargeCarSpaces == 0){
+				throw new SimulationException("Error: No suitable spaces remaining.");
+			} else if (theCar.isSmall() && (availableLargeCarSpaces > 0 || availableSmallCarSpaces > 0)){
+				v.enterParkedState(time, intendedDuration);
+				theCarPark.add(v);
+			} else {
+				throw new SimulationException("Error: No suitable spaces remaining.");
+			}
+		} else {
+			MotorCycle theMoto = (MotorCycle)v;
+			if (availableMotoSpaces > 0){
+				v.enterParkedState(time, intendedDuration);
+				theMotoSpaces.add(v);
+			} else if (availableSmallCarSpaces > 0){
+				v.enterParkedState(time, intendedDuration);
+				theCarPark.add(v);
+			} else {
+				throw new SimulationException("Error: No suitable spaces remaining.");
+			}
+		}
 	}
 
 	/**
